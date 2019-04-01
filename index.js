@@ -41,7 +41,7 @@ server.post('/api/login', (req, res) => {
         return user;
       }
       else {
-        throw '';
+        throw 'Bad credentials. Try again.';
       }
     })
     .then(userObj => {
@@ -52,12 +52,12 @@ server.post('/api/login', (req, res) => {
         });
       }
       else {
-        throw '';
+        throw 'Bad credentials. Try again.';
       }
     })
     .catch(err => {
       res.status(401).json({
-        message: `Bad credentials. Try again.`
+        message: err
       })
     })
     .catch(err => {
