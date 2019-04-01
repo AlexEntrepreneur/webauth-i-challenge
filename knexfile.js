@@ -6,7 +6,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './authTest.sqlite3'
+      filename: './database/authTest.sqlite3'
     },
     seeds: {
       directory: './database/seeds/'
