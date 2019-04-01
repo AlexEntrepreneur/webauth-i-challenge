@@ -13,5 +13,11 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run"
   }
 }
