@@ -11,11 +11,11 @@ const restrictedRoute = (req, res, next) => {
   if (pathContainsRestricted && clientHasLiveSession) {
     next();
   }
-  else if (!endpointPathExists) {
-    next();
+  else if (pathContainsRestricted && endpointPathExists) {
+    res.status(401).send('You shall not pass! You must authenticate!');
   }
   else {
-    res.status(401).send('You shall not pass! You must authenticate!');
+    next();
   }
 }
 
